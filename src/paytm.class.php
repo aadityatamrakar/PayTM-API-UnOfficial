@@ -4,7 +4,7 @@ $imei = rand(111111111111111, 999999999999999);
     
 class PayTM{
     function register($number, $password, $email = ''){
-        $url = "https://accounts.paytm.com/v3/api/register?$device_identifier";
+        $url = "https://accounts.paytm.com/v3/api/register?deviceIdentifier$device_identifier";
         $auth_user = 'market-app';
         $auth_pass = '9a071762-a499-4bd9-914a-4361e7c3f4bc';
         $data = array(
