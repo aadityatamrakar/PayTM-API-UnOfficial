@@ -7,13 +7,10 @@ class PayTM{
         $url = "https://accounts.paytm.com/v3/api/register?$device_identifier";
         $auth_user = 'market-app';
         $auth_pass = '9a071762-a499-4bd9-914a-4361e7c3f4bc';
-        $register_phone = '8855334455';
-        $register_password = 'a123456';
-        $register_email = 'sdioadjas@fnoei.com';
         $data = array(
-                    "email" => $register_email,
-                    "mobile" => $register_phone,
-                    "loginPassword" => $register_password,
+                    "email" => $email,
+                    "mobile" => $number,
+                    "loginPassword" => $password,
                     "clientId" => $auth_user,
                     "scope" => "paytm",
                     "state" => "xyz",
@@ -24,7 +21,7 @@ class PayTM{
         $length = strlen($post_data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_USERPWD, "$auth_user:$$authpass");
+        curl_setopt($ch, CURLOPT_USERPWD, "$auth_user:$authpass");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);  //Post Fields
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -109,7 +106,7 @@ class PayTM{
         $length = strlen($post_data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_USERPWD, "$auth_user:$$authpass");
+        curl_setopt($ch, CURLOPT_USERPWD, "$auth_user:$authpass");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);  //Post Fields
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -148,7 +145,7 @@ class PayTM{
         $length = strlen($post_data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_USERPWD, "$auth_user:$$authpass");
+        curl_setopt($ch, CURLOPT_USERPWD, "$auth_user:$authpass");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);  //Post Fields
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
