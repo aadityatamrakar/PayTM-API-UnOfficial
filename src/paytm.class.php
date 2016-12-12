@@ -1,7 +1,8 @@
 <?php
-class PayTM{
-    $imei = rand(111111111111111, 999999999999999);
+$imei = rand(111111111111111, 999999999999999);
     $device_identifier = "deviceIdentifier=Xiaomi-Redmi_note3-$imei&deviceManufacturer=Xiaomi&deviceName=Redmi_Note_3&client=androidapp&version=6.0.1&playStore=true&language=en&networkType=Mobile&imei=$imei&osVersion=6.0";
+    
+class PayTM{
     function register($number, $password, $email = ''){
         $url = "https://accounts.paytm.com/v3/api/register?$device_identifier";
         $auth_user = 'market-app';
